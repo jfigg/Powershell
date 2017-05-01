@@ -67,4 +67,4 @@ switch ($regkey) {
     
 }#end switch
 write-host "read reg key to $regkey"
-}#end while
+}#end wh
