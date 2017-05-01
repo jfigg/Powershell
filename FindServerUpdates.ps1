@@ -24,10 +24,15 @@ $updates = @()
 }
 
 
+
 foreach ($server in $onlineServers){
     write-host -fore DarkGreen "Checking $server"
     Try {
-        $updates += (get-hotfix -ComputerName "$server" -ErrorAction stop | sort installedon)[-1]
+        $osname = (Get-WmiObject -computername "$server" Win32_OperatingSystem).Name
+        $osname = $osname.Substring(0, $osname.IndexOf('|'))
+        $current = (get-hotfix -ComputerName "$server" -ErrorAction stop | sort installedon)[-1] 
+        $current | Add-Member -type NoteProperty -Name 'OSName' -Value "$osname"
+        $updates += $current
         write-host -fore Green "$server Checked"
     }
     Catch {
@@ -38,4 +43,4 @@ foreach ($server in $onlineServers){
 }
 
 
-$updates | Format-table | Out-File "C:\Users\jfigg.NHTI\Documents\ServerUpdateStatus.txt"
+$updates | format-table PSComputerName,Description,HotFixID,InstalledOn,OSName | Out-File "C:\Users\jfigg.NHTI\Documents\ServerUpdateStatus.txt"
