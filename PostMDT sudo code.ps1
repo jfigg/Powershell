@@ -7,10 +7,12 @@ $createvolumes = 5
 $rebootfrozen = 6
 
 
-write-host "read reg key to $regkey"
+
 
 while ($true) {
-
+	
+	write-host "read reg key to $regkey"
+	
 switch ($regkey) {
     $success {
         writ-host "exit"
@@ -66,5 +68,4 @@ switch ($regkey) {
 
     
 }#end switch
-write-host "read reg key to $regkey"
 }#end while
