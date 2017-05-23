@@ -43,4 +43,4 @@ foreach ($server in $onlineServers){
 }
 
 
-$updates | format-table PSComputerName,Description,HotFixID,InstalledOn,OSName | Out-File "C:\Users\jfigg.NHTI\Documents\ServerUpdateStatus.txt"
+$updates | format-table PSComputerName,Description,HotFixID,InstalledOn,OSName | Out-File "C:\Users\jfigg\Documents\ServerUpdateStatus.txt"
