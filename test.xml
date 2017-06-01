@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<postdeploydata>
+<applications>
+    <app>Path To App 1</app>
+	<app>Path To App 2</app>
+	<app>Path To App 3</app>
+	<app>Path To App 4</app>
+	<app>Path To App 5</app>
+	<app>Path To App 6</app>
+	<apptoo>test</apptoo>
+</applications>
+<regkeys>
+	<delete>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinlogonAutoAdminLogon</delete>
+	<delete>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\DefaultPassword</delete>
+	<delete>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\ForceAutoLogon</delete>
+</regkeys>
+</postdeploydata>
